@@ -1,6 +1,6 @@
 <?php
 
-namespace Bitter\S3FileStorage\File\StorageLocation\File\StorageLocation\Configuration;
+namespace Bitter\S3FileStorage\File\StorageLocation\Configuration;
 
 use Aws\S3\S3Client;
 use Concrete\Core\Error\ErrorList\Error\Error;
@@ -13,7 +13,7 @@ use Concrete\Core\File\StorageLocation\Configuration\Configuration;
 use League\Url\Url;
 use League\Flysystem\AwsS3v3\AwsS3Adapter;
 
-class S3Configuration extends Configuration implements ConfigurationInterface, DeferredConfigurationInterface
+class S3FileStorageConfiguration extends Configuration implements ConfigurationInterface, DeferredConfigurationInterface
 {
     public ?string $bucket = null;
     public ?string $key = null;

@@ -2,7 +2,7 @@
 
 defined('C5_EXECUTE') or die('Access Denied');
 
-use Bitter\S3FileStorage\File\StorageLocation\File\StorageLocation\Configuration\S3Configuration;
+use Bitter\S3FileStorage\File\StorageLocation\Configuration\S3FileStorageConfiguration;
 use Concrete\Core\Form\Service\Form;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\View\View;
@@ -16,7 +16,7 @@ $form = $app->make(Form::class);
 
 ?>
 
-<?php if ($configuration instanceof S3Configuration) { ?>
+<?php if ($configuration instanceof S3FileStorageConfiguration) { ?>
     <div class="ccm-dashboard-header-buttons">
         <?php /** @noinspection PhpUnhandledExceptionInspection */
         View::element("dashboard/help", [], "s3_file_storage"); ?>
@@ -69,7 +69,7 @@ $form = $app->make(Form::class);
                 </div>
             </div>
 
-            <?php echo $form->text('key', $configuration->getKey(), ["name" => "fslType[key]", "required" => "required"]); ?>
+            <?php echo $form->password('key', $configuration->getKey(), ["name" => "fslType[key]", "required" => "required"]); ?>
         </div>
 
         <div class="form-group">

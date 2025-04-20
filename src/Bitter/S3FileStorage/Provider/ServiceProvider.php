@@ -2,7 +2,7 @@
 
 namespace Bitter\S3FileStorage\Provider;
 
-use Bitter\S3FileStorage\File\StorageLocation\File\StorageLocation\Configuration\S3Configuration;
+use Bitter\S3FileStorage\File\StorageLocation\Configuration\S3FileStorageConfiguration;
 use Concrete\Core\Application\Application;
 use Concrete\Core\Foundation\Service\Provider;
 use Concrete\Core\Routing\RouterInterface;
@@ -35,9 +35,9 @@ class ServiceProvider extends Provider
 
     private function initializeFileStorageType()
     {
-        $this->app->bind(
-            '\Concrete\Package\S3FileStorage\File\StorageLocation\Configuration\S3FileStorageConfiguration',
-            S3Configuration::class
+        class_alias(
+            S3FileStorageConfiguration::class,
+            'Concrete\Package\S3FileStorage\File\StorageLocation\Configuration\S3FileStorageConfiguration'
         );
     }
 }
