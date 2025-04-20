@@ -63,5 +63,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-version');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['clean:dist', 'copy', 'version', 'compress:main', 'clean:dist']);
+    grunt.registerTask('default', ['clean:dist', 'copy', 'compress:main', 'clean:dist']);
 };
