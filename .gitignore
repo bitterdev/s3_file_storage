@@ -1,0 +1,7 @@
+.idea/
+vendor/
+node_modules
+composer.lock
+package.lock
+build/node_modules
+release/

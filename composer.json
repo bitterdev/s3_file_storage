@@ -1,0 +1,14 @@
+{
+  "name": "bitter/s3_file_storage",
+  "type": "concrete5-package",
+  "description": "Flexible file storage add-on for Concrete CMS that works with any S3-compatible service, including MinIO and other open-source or third-party providers—not just Amazon S3.",
+  "autoload": {
+    "psr-4": {
+      "Bitter\\S3FileStorage\\": "src/Bitter/S3FileStorage"
+    }
+  },
+  "require": {
+    "aws/aws-sdk-php": "^3.342",
+    "league/flysystem-aws-s3-v3": "^1.0"
+  }
+}
