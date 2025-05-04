@@ -7,7 +7,7 @@ use Concrete\Core\Form\Service\Form;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\View\View;
 
-/** @var S3Configuration $configuration */
+/** @var S3FileStorageConfiguration $configuration */
 
 $app = Application::getFacadeApplication();
 /** @var Form $form */
@@ -21,6 +21,9 @@ $form = $app->make(Form::class);
         <?php /** @noinspection PhpUnhandledExceptionInspection */
         View::element("dashboard/help", [], "s3_file_storage"); ?>
     </div>
+
+    <?php /** @noinspection PhpUnhandledExceptionInspection */
+    View::element("dashboard/did_you_know", [], "s3_file_storage"); ?>
 
     <fieldset>
         <legend>
