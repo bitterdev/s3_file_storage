@@ -72,7 +72,7 @@ $form = $app->make(Form::class);
                 </div>
             </div>
 
-            <?php echo $form->password('key', $configuration->getKey(), ["name" => "fslType[key]", "required" => "required"]); ?>
+            <?php echo $form->text('key', $configuration->getKey(), ["name" => "fslType[key]", "required" => "required"]); ?>
         </div>
 
         <div class="form-group">
@@ -84,12 +84,12 @@ $form = $app->make(Form::class);
                 </div>
             </div>
 
-            <?php echo $form->text('secret', $configuration->getSecret(), ["name" => "fslType[secret]", "required" => "required"]); ?>
+            <?php echo $form->password('secret', $configuration->getSecret(), ["name" => "fslType[secret]", "required" => "required"]); ?>
         </div>
 
         <div class="form-group">
             <?php echo $form->label("publicUrl", t("Public Url")); ?>
-            <?php echo $form->text("publicUrl", $configuration->getPublicUrl(), ["name" => "fslType[Public]"]); ?>
+            <?php echo $form->text("publicUrl", $configuration->getPublicUrl(), ["name" => "fslType[publicUrl]"]); ?>
 
             <p class="help-block">
                 <?php echo t("If you're using a CDN like CloudFront, enter the public URL that should be prepended to file paths (e.g., %s). Leave empty to use the default S3 URL.", "<code>https://xxxxxxx.cloudfront.net</code>"); ?>
