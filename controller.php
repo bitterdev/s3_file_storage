@@ -10,7 +10,7 @@ use Concrete\Core\File\StorageLocation\Type\Type;
 class Controller extends Package
 {
     protected string $pkgHandle = 's3_file_storage';
-    protected string $pkgVersion = '0.0.3';
+    protected string $pkgVersion = '0.0.4';
     protected $appVersionRequired = '9.0.0';
     protected $pkgAutoloaderRegistries = [
         'src/Bitter/S3FileStorage' => 'Bitter\S3FileStorage',
