@@ -3,6 +3,7 @@
 namespace Bitter\S3FileStorage\File\StorageLocation\Configuration;
 
 use Aws\S3\S3Client;
+use Bitter\S3FileStorage\AwsS3v3\SecureS3Adapter;
 use Concrete\Core\Error\ErrorList\Error\Error;
 use Concrete\Core\Error\ErrorList\ErrorList;
 use Concrete\Core\File\StorageLocation\Configuration\DeferredConfigurationInterface;
@@ -11,7 +12,6 @@ use Concrete\Core\Http\Request;
 use Concrete\Core\File\StorageLocation\Configuration\ConfigurationInterface;
 use Concrete\Core\File\StorageLocation\Configuration\Configuration;
 use League\Url\Url;
-use League\Flysystem\AwsS3v3\AwsS3Adapter;
 
 class S3FileStorageConfiguration extends Configuration implements ConfigurationInterface, DeferredConfigurationInterface
 {
@@ -77,9 +77,9 @@ class S3FileStorageConfiguration extends Configuration implements ConfigurationI
         return $e;
     }
 
-    public function getAdapter(): AwsS3Adapter
+    public function getAdapter(): SecureS3Adapter
     {
-        return new AwsS3Adapter($this->getClient(), $this->bucket);
+        return new SecureS3Adapter($this->getClient(), $this->bucket);
     }
 
     protected function getClient(): S3Client
