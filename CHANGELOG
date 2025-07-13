@@ -1,4 +1,4 @@
-Version 0.0.4
+Version 0.0.6
 ==================================================
 - Added custom SecureS3Adapter to strip ACL and visibility config to support ACL-disabled S3 buckets.
 
